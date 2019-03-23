@@ -3,19 +3,12 @@ import { Link } from 'react-router-dom';
 
 import * as ROUTES from '../../constants/routes';
 
-class SignUpPage extends React.Component {
-    constructor(props) {
-        super(props);
-    }
-
-    render() {
-        return ( 
-            <div>
-                <h1>SignUpPage</h1>
-            </div>  
-        );
-    }
-}
+const SignUpPage = () => (
+  <div>
+    <h1>SignUp</h1>
+    <SignUpForm />
+  </div>
+);
 
 const INITIAL_STATE = {
   username: '',
@@ -82,28 +75,24 @@ class SignUpForm extends Component {
           type="password"
           placeholder="Confirm Password"
         />
-        <button disabled={isInvalid} type="submit">
-          Sign Up
-        </button>
+        <div class="row">
+            <div class="col s3 offset-s8">
+                <button disabled={isInvalid} class="btn btn-large waves-effect waves-light blue" type="submit" name="action">Submit
+                    <i class="material-icons right">send</i>
+                </button>
+            </div>
+        </div>
         
         {error && <p>{error.message}</p>}
       </form>
     );
   }
 }
-class SignUpLink extends React.Component {
-    constructor(props) {
-        super(props);
-    }
-
-    render() {
-        return ( 
-            <div>
-                <h1>SignUpLink</h1>
-            </div>  
-        );
-    }
-}
+const SignUpLink = () => (
+  <p>
+    Don't have an account? <Link to={ROUTES.SIGN_UP}>Sign Up</Link>
+  </p>
+);
 
 export default SignUpPage;
 
