@@ -18,7 +18,24 @@ import * as ROUTES from '../../constants/routes';
 class App extends React.Component {
   constructor(props) {
     super(props);
-  }    
+    this.state = {};
+    
+    // This is used to proxy the client (react) through the express server
+    // So client and server can be deployed together
+    this.connecToServer = this.connecToServer.bind(this);
+  }
+
+  // This is used to proxy the client (react) through the express server
+  // So client and server can be deployed together
+  connecToServer() {
+    fetch('/');
+  }
+
+  // This is used to proxy the client (react) through the express server
+  // So client and server can be deployed together
+  componentDidMount() {
+    this.connecToServer();
+  }
 
   render() {
     return ( 
