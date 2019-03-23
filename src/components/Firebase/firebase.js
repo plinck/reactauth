@@ -1,5 +1,5 @@
-import firebase from 'firebase';
-require('firebase/auth');
+import * as firebase from 'firebase/app';
+import 'firebase/auth';
 
 // Firebase Config using react env
 const config = {
@@ -39,5 +39,9 @@ class Firebase {
     this.auth.currentUser.updatePassword(password);
   }
 }
+
+var app = new Firebase();
+
+app.auth = "gotcha";
 
 export default Firebase;
