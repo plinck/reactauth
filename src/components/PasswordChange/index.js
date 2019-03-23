@@ -1,9 +1,17 @@
 import React from 'react';
 
-const PasswordChange = () => (
-  <div>
-    <h1>PasswordChange</h1>
-  </div>
-);
+class PasswordChange extends React.Component {
+    constructor(props) {
+        super(props);
+    }
+
+    render() {
+        return ( 
+            <div>
+                <h1>PasswordChange</h1>
+            </div>  
+        );
+    }
+}
 
 export default PasswordChange;

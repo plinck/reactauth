@@ -1,4 +1,5 @@
-import app from 'firebase/app';
+import firebase from 'firebase';
+require('firebase/auth');
 
 // Firebase Config using react env
 const config = {
@@ -12,13 +13,12 @@ const config = {
 
 class Firebase {
   constructor() {
-    app.initializeApp(config);
+    firebase.initializeApp(config);
 
-    this.auth = app.auth();
+    this.auth = firebase.auth();
   }
 
   // *** Firebase Auth API ***
-
   doCreateUserWithEmailAndPassword = (email, password) => {
     this.auth.createUserWithEmailAndPassword(email, password);
   }

@@ -1,9 +1,17 @@
 import React from 'react';
 
-const PasswordForget = () => (
-  <div>
-    <h1>PasswordForget</h1>
-  </div>
-);
+class PasswordForget extends React.Component {
+    constructor(props) {
+        super(props);
+    }
+
+    render() {
+        return ( 
+            <div>
+                <h1>PasswordForget</h1>
+            </div>  
+        );
+    }
+}
 
 export default PasswordForget;
