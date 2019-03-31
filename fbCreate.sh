@@ -1,0 +1,1 @@
+firebase init --project paullinck-authreact

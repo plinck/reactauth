@@ -28,11 +28,27 @@ class Firebase {
 
   // *** Firebase Auth API ***
   doCreateUserWithEmailAndPassword = (email, password) => {
-    this.auth.createUserWithEmailAndPassword(email, password);
+    return new Promise((resolve, reject) => {
+      this.auth.createUserWithEmailAndPassword(email, password).then((authData) => {
+          console.log("User created successfully with payload-", authData);
+          return resolve(authData);
+        }).catch((err) => {
+          console.error("User create failed!", err);
+          return reject(err);
+        }) 
+    }); // Promise
   }
 
   doSignInWithEmailAndPassword = (email, password) => {
-    this.auth.signInWithEmailAndPassword(email, password);
+    return new Promise((resolve, reject) => {
+      this.auth.signInWithEmailAndPassword(email, password).then((authData) => {
+          console.log("User logged in successfully with payload-", authData);
+          return resolve(authData);
+        }).catch((err) => {
+          console.error("Login Failed!", err);
+          return reject(err);
+        }) 
+    }); // Promise
   }
 
   doSignOut = () => {
@@ -40,16 +56,28 @@ class Firebase {
   }
 
   doPasswordReset = (email) => {
-    this.auth.sendPasswordResetEmail(email);
+    return new Promise((resolve, reject) => {
+      this.auth.sendPasswordResetEmail(email).then((authData) => {
+          console.log("User email reset sent successfully with payload-", authData);
+          return resolve(authData);
+        }).catch((err) => {
+          console.error("Login Failed!", err);
+          return reject(err);
+        }) 
+    }); // Promise
   }
 
-  doPasswordUpdate = password => {
-    this.auth.currentUser.updatePassword(password);
+  doPasswordUpdate = (password) => {
+    return new Promise((resolve, reject) => {
+      this.auth.currentUser.updatePassword(password).then((authData) => {
+          console.log("User email reset sent successfully with payload-", authData);
+          return resolve(authData);
+        }).catch((err) => {
+          console.error("Login Failed!", err);
+          return reject(err);
+        }) 
+    }); // Promise
   }
 }
-
-var app = new Firebase();
-
-app.auth = "gotcha";
 
 export default Firebase;
