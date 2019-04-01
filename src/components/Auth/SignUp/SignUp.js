@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link, withRouter } from 'react-router-dom';
 
-import { withFirebase } from '../Auth/Firebase/FirebaseContext';
+import { withFirebase } from '../Firebase/FirebaseContext';
 
 const SignUpPage = () => (
   <div>

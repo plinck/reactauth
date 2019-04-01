@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
 import { compose } from 'recompose';
 
-import { SignUpLink } from '../SignUp';
-import { withFirebase } from '../Auth/Firebase/FirebaseContext';
+import { SignUpLink } from '../SignUp/SignUp';
+import { withFirebase } from '../Firebase/FirebaseContext';
 
 const SignInPage = () => (
   <div>

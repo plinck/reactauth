@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link, NavLink } from 'react-router-dom';
-import SignOutButton from '../SignOut';
-import { AuthUserContext } from '../Session';
+import SignOutButton from '../Auth/SignOut/SignOut';
+import AuthUserContext from '../Auth/Session/AuthUserContext';
 
 class Navigation extends React.Component {
   constructor(props) {
