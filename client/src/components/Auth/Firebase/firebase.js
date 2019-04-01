@@ -1,5 +1,6 @@
 import * as firebase from 'firebase/app';
 import 'firebase/auth';
+require("dotenv").config();
 
 // Firebase Config using react env
 const config = {

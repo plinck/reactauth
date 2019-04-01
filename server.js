@@ -8,7 +8,7 @@ const mongoose = require("mongoose");
 const axios = require("axios");
 
 // Require all models
-const db = require("./models");
+//const db = require("./models");
 
 // Parse request body as JSON
 app.use(express.urlencoded({
@@ -39,27 +39,29 @@ app.get('/api/user', (req, res) => {
 
 // Make sure our React files are being served by our Express server.
 // Serve static files from the React frontend app
-app.use(express.static(path.join(__dirname, 'client', 'build')));
+// app.use(express.static(path.join(__dirname, 'client', 'build')));
 
-app.get('*', function (req, res) {
-    const index = path.join(__dirname, 'client', 'build', 'index.html');
-    res.sendFile(index);
-});
+// app.get('*', function (req, res) {
+//     const index = path.join(__dirname, 'client', 'build', 'index.html');
+//     res.sendFile(index);
+// });
 
 // //production mode - serve from build dir, else serve from public
-// if (process.env.NODE_ENV === 'production') {
-//     app.use(express.static(path.join(__dirname, 'client/build')));
-//     app.get('*', (req, res) => {
-//         console.log(path.join(__dirname, '/client/build/index.html'));
-//         res.sendfile(path.join(__dirname = '/client/build/index.html'));
-//     })
-// } else {
-//     //build mode
-//     app.get('*', (req, res) => {
-//         console.log(path.join(__dirname, '/client/public/index.html'));
-//         res.sendFile(path.join(__dirname + '/client/public/index.html'));
-//     })
-// }
+if (process.env.NODE_ENV === 'production') {
+    app.use(express.static(path.join(__dirname, 'client', 'build')));
+    app.get('*', function (req, res) {
+        const index = path.join(__dirname, 'client', 'build', 'index.html');
+        res.sendFile(index);
+    });
+} else {
+    //build mode
+    app.use(express.static(path.join(__dirname, 'client', 'public')));
+
+    app.get('*', (req, res) => {
+        console.log(path.join(__dirname, '/client/public/index.html'));
+        res.sendFile(path.join(__dirname + '/client/public/index.html'));
+    })
+}
 
 //Start server
 app.listen(port, (req, res) => {
