@@ -2,7 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './components/App/App';
-import Firebase, { FirebaseContext } from './components/Firebase'; // Firebase instance and context
+import Firebase  from './components/Auth/Firebase/firebase'; // Firebase instance 
+import FirebaseContext from "./components/Auth/Firebase/FirebaseContext";
 // Top ensure firebase is only instantiated once
 
 import * as serviceWorker from './serviceWorker';
