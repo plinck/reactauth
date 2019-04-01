@@ -11,10 +11,7 @@ import * as serviceWorker from './serviceWorker';
 // Doing it this way, we can be assured that Firebase is only instantiated once 
 // and that it is injected via React’s Context API to React’s component tree. 
 // Now, every component that is interested in using Firebase has access to the Firebase instance
-// with a FirebaseContext.Consumer component. 
-// Even though you will see it first-hand later for this application, the following code snippet shows how it would work:
-// import React from 'react';
-// import  { FirebaseContext } from '../Firebase';
+// with a FirebaseContext.Consumer component.  e.g.
 // const SomeComponent = () => (
 //   <FirebaseContext.Consumer>
 //     {firebase => {

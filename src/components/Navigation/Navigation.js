@@ -46,6 +46,9 @@ class Navigation extends React.Component {
     ;
 
     // get auth user from react-context firebase
+    // Not the AuthUSerContext Provider passes the authUser
+    // in its value={} paramater (see withAuthentication component in Auth/Session)
+    // ANY COMPONENT that needs authUser info uses consumer this way
     const Navigation = () => (
       <div>
         <AuthUserContext.Consumer>
