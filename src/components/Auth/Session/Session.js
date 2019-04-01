@@ -1,5 +1,5 @@
 import React from 'react';
-import AuthUserContext from './context';
+import AuthUserContext from './AuthUserContext';
 
 class Session extends React.Component {
     constructor(props) {

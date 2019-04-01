@@ -15,7 +15,7 @@ import AdminPage from '../Admin';
 
 // Session/State Info for all components
 import { withFirebase } from '../Auth/Firebase/FirebaseContext';
-import { AuthUserContext } from '../Session';
+import AuthUserContext from '../Auth/Session/AuthUserContext';
 
 class App extends React.Component {
   constructor(props) {
